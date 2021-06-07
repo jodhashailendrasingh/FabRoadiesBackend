@@ -1,4 +1,4 @@
-package com.FabRoadies.controller;
+package com.FabRoadies.rest;
 
 import java.util.Date;
 import java.util.List;
