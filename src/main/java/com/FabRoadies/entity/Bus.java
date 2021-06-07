@@ -20,10 +20,10 @@ public class Bus {
     @Id
     private String busno;
     private String agency;
-    private String departurecity;
-    private String arrivalcity;
+    private String departureCity;
+    private String arrivalCity;
     @Temporal(TemporalType.DATE)
-    private Date dateofdeparture;
+    private Date dateofDeparture;
     //localtime(temporalValue)
     //@Temporal(TemporalType.TIME)
    // private LocalTime departuretime;
@@ -44,24 +44,24 @@ public class Bus {
 	public void setAgency(String agency) {
 		this.agency = agency;
 	}
-	public String getDeparturecity() {
-		return departurecity;
+	public String getDepartureCity() {
+		return departureCity;
 	}
-	public void setDeparturecity(String departurecity) {
-		this.departurecity = departurecity;
+	public void setDepartureCity(String departurecity) {
+		this.departureCity = departurecity;
 	}
-	public String getArrivalcity() {
-		return arrivalcity;
+	public String getArrivalCity() {
+		return arrivalCity;
 	}
-	public void setArrivalcity(String arrivalcity) {
-		this.arrivalcity = arrivalcity;
+	public void setArrivalCity(String arrivalcity) {
+		this.arrivalCity = arrivalcity;
 	}
 	
-	public Date getDateofdeparture() {
-		return dateofdeparture;
+	public Date getDateofDeparture() {
+		return dateofDeparture;
 	}
-	public void setDateofdeparture(Date dateofdeparture) {
-		this.dateofdeparture = dateofdeparture;
+	public void setDateofDeparture(Date dateofDeparture) {
+		this.dateofDeparture = dateofDeparture;
 	}
 	public Date getDeparturetime() {
 		return departuretime;
