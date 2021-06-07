@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@JsonIgnoreProperties({"tickets"})
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
