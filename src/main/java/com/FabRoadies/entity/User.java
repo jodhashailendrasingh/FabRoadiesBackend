@@ -3,7 +3,6 @@ package com.FabRoadies.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,8 +17,7 @@ public class User {
 
     @Column(nullable = false)
     private String password;
-    private String firstname;
-    private String lastname;
+    private String name;
     private String phoneNumber;
 
     
@@ -47,20 +45,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setName(String firstname) {
+        this.name = firstname;
     }
 
     public String getPhoneNumber() {
@@ -70,6 +60,5 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
 
 }
