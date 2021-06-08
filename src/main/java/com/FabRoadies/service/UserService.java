@@ -6,7 +6,7 @@ import com.FabRoadies.entity.User;
 
 public interface UserService {
 
-	void addUser(User user);
+
 
 	List<User> getAllUser();
 
@@ -15,6 +15,8 @@ public interface UserService {
 	void updateUser(int id, User user);
 
 	void removeUser(int code);
+
+	void addUser(User user, int roll);
 
 
 }
