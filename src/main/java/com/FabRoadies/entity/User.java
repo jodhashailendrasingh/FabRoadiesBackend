@@ -4,6 +4,8 @@ package com.FabRoadies.entity;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -18,6 +20,10 @@ public class User {
     private String password;
     private String name;
     private String phoneNumber;
+	@JsonBackReference
+	@ManyToOne
+	@JoinColumn(name="roll_id")
+	private Roles roll;
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -48,5 +54,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Roles getRoll() {
+		return roll;
+	}
+	public void setRoll(Roles roll) {
+		this.roll = roll;
+	}
+
+	
 	
 }

@@ -4,7 +4,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.FabRoadies.entity.Roles;
 import com.FabRoadies.entity.User;
+import com.FabRoadies.repo.RollRepo;
 import com.FabRoadies.repo.UserRepo;
 
 
@@ -14,13 +16,26 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepo repo;
+	@Autowired
+	private RollRepo rollrepo;
 
 	@Override
-	public void addUser(User user) {
+	public void addUser(User user,int roll) {
 		// TODO Auto-generated method stub
-		repo.save(user);
+		Roles rolls =getRoll(roll);
+		user.setRoll(rolls);
+	    repo.save(user);
+		
 		}
+	public Roles getRoll(int roll)
+	{
+		return rollrepo.findById(roll).get();
+	}
 
+	
+	
+	
+	
 	@Override
 	public List<User> getAllUser() {
 		// TODO Auto-generated method stub

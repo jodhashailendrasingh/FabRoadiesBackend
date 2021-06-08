@@ -21,10 +21,17 @@ public class BusService {
 	{  busRepository.save(bus);
 		
 	}
+	
+	public void delete(Bus bus)
+	{  busRepository.delete(bus);
+		
+	}
+	
 	public List<Bus> findBuses(String source,String destination, Date departDate)
 	{
 		return busRepository.findBuses(source,destination,departDate);
 	}
+	
 	public List<Bus> findBuses()
 	{
 		return busRepository.findAll();

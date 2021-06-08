@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FabRoadies.entity.User;
+import com.FabRoadies.repo.UserRepo;
 import com.FabRoadies.service.UserService;
 
 
@@ -21,12 +22,20 @@ public class UserController
 {
 	@Autowired
 	private UserService service;
+    @Autowired
+    private UserRepo userRepository;
 	
-	@PostMapping(value="/add",consumes="application/json")
-	public void addUser(@RequestBody User user)
+	@PostMapping(value="/add/{roll}",consumes="application/json")
+	public void addUser(@RequestBody User user,@PathVariable("roll") int roll)
 	{
-		service.addUser(user);
+		 User foundUser = userRepository.findOneByEmail(user.getEmail());
+	        if (foundUser != null) {
+	            throw new RuntimeException();
+	        }
+		service.addUser(user,roll);
 	}
+	
+	//////////////
 	
 	@GetMapping(value="/users/{code}",produces="application/json")
 	public User getUser(@PathVariable("code") int code) {

@@ -35,8 +35,8 @@ public class BusController {
 	    }
 	   
 	     
-	    @GetMapping("/admin/showAddFlight")
-	    @RequestMapping("/admin/showAddFlight")
+	    @GetMapping("/admin/showAllBuses")
+	    @RequestMapping("/admin/showAllBuses")
 	    public List<Bus> showAddFlightPage(){
 	        return busService.findBuses();
 	    }
@@ -47,6 +47,13 @@ public class BusController {
 	      
 	      
 	    }
+	    @PostMapping("/admin/deleteBus")
+	    public void deleteBus(@RequestBody Bus bus){
+	    	 busService.delete(bus);   
+	      
+	      
+	    }
+	    
 	    
 
 }      
