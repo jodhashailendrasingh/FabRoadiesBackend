@@ -17,7 +17,7 @@ import com.FabRoadies.service.UserService;
 
 
 @CrossOrigin
-@RestController
+@RestController  
 public class UserController 
 {
 	@Autowired
@@ -31,7 +31,7 @@ public class UserController
 		 User foundUser = userRepository.findOneByEmail(user.getEmail());
 	        if (foundUser != null) {
 	            throw new RuntimeException();
-	        }
+	        }  
 		service.addUser(user,roll);
 	}
 	
