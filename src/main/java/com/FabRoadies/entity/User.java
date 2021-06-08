@@ -2,6 +2,8 @@ package com.FabRoadies.entity;
 
 
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -24,6 +26,8 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name="roll_id")
 	private Roles roll;
+	  @OneToMany
+	    private List<Ticket> tickets;
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -59,6 +63,12 @@ public class User {
 	}
 	public void setRoll(Roles roll) {
 		this.roll = roll;
+	}
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
 	

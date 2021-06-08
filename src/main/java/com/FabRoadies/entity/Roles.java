@@ -21,6 +21,7 @@ public class Roles {
 	@OneToMany(mappedBy="roll")
 	private List<User>user;
 	
+	
 	public int getRollid() {
 		return rollid;
 	}
