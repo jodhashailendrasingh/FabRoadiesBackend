@@ -29,12 +29,7 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name="roll_id")
 	private Roles roll;
-<<<<<<< HEAD
-
-=======
-	  @OneToMany
-	    private List<Ticket> tickets;
->>>>>>> f882a68260f44186b2cb9aa833716a99ace8d06b
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
