@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Represents Admin entity
+ * @author Dhruv Marothi
+ * @version 1.0
+ */
 @Entity
 @Table(name = "admin")
 public class Admin {
