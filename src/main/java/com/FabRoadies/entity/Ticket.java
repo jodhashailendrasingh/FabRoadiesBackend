@@ -21,14 +21,16 @@ public class Ticket {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ticketId;  
-//    @ManyToOne
-//    private Connection connection;
-    @NotNull
+    @ManyToOne
+    private Bus bus;
+	@NotNull
     private double price;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date reservationDate;
     @ManyToOne
     private User user;
+    private boolean booked=true;
+    private int seat;
     
     //Getters and Setters
     public long getTicketId() {
@@ -36,6 +38,12 @@ public class Ticket {
 	}
 	public void setTicketId(long ticketId) {
 		this.ticketId = ticketId;
+	}
+	public Bus getBus() {
+		return bus;
+	}
+	public void setBus(Bus bus) {
+		this.bus = bus;
 	}
     public double getPrice() {
 		return price;
@@ -55,4 +63,17 @@ public class Ticket {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public boolean isBooked() {
+		return booked;
+	}
+	public void setBooked(boolean booked) {
+		this.booked = booked;
+	}
+	public int getSeat() {
+		return seat;
+	}
+	public void setSeat(int seat) {
+		this.seat = seat;
+	}
+	
 }

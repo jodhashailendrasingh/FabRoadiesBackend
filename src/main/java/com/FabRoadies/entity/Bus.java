@@ -20,6 +20,7 @@ public class Bus {
     @Id
     private String busno;
     private String agency;
+    private String busType;
     private String departureCity;
     private String arrivalCity;
     @Temporal(TemporalType.DATE)
@@ -44,6 +45,7 @@ public class Bus {
 	public void setAgency(String agency) {
 		this.agency = agency;
 	}
+	
 	public String getDepartureCity() {
 		return departureCity;
 	}
@@ -68,6 +70,12 @@ public class Bus {
 	}
 	public void setDeparturetime(Date departuretime) {
 		this.departuretime = departuretime;
+	}
+	public String getBusType() {
+		return busType;
+	}
+	public void setBusType(String busType) {
+		this.busType = busType;
 	}
 	
 	
