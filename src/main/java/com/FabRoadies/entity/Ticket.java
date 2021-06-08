@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 
@@ -21,14 +23,22 @@ public class Ticket {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ticketId;  
-    @ManyToOne
+    ///////////////////////////
+	@ManyToOne
+	@JsonBackReference
+    @JoinColumn(name="bus_id")
     private Bus bus;
+	////////////////////////////
 	@NotNull
     private double price;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date reservationDate;
+    /////////////////////////
     @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name="user_id")
     private User user;
+    //////////////////////////
     private boolean booked=true;
     private int seat;
     

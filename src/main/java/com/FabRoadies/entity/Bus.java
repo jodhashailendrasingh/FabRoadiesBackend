@@ -2,9 +2,11 @@ package com.FabRoadies.entity;
 
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -25,6 +27,10 @@ public class Bus {
     private String arrivalCity;
     @Temporal(TemporalType.DATE)
     private Date dateofDeparture;
+    /////////////////////////
+    @OneToMany(mappedBy="bus")
+    private List<Ticket> tickets;
+    /////////////////////////
     //localtime(temporalValue)
     //@Temporal(TemporalType.TIME)
    // private LocalTime departuretime;
@@ -77,10 +83,17 @@ public class Bus {
 	public void setBusType(String busType) {
 		this.busType = busType;
 	}
+
 	
 	
+	///////////////
 	
-	
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
+	}
 	
     
     

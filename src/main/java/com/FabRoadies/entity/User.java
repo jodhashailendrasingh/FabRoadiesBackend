@@ -22,8 +22,10 @@ public class User {
     private String password;
     private String name;
     private String phoneNumber;
-    @OneToMany
+    ////////////////
+    @OneToMany(mappedBy="user")
     private List<Ticket> tickets;
+    ///////////////////
     
 	@JsonBackReference
 	@ManyToOne

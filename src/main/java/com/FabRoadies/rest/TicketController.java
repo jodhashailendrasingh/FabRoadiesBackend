@@ -19,6 +19,7 @@ public class TicketController {
 	@Autowired
 	private TicketService service;
 	
+
 	@PostMapping(value="/add/ticket/{busId}/{userId}/{noOfSeat}",consumes="application/json")
 	public Ticket addTicket(@PathVariable("busId") String busId,@PathVariable("userId") int userId,@PathVariable int noOfSeat) {
 		return service.bookTicket(busId, userId, noOfSeat);
