@@ -23,7 +23,7 @@ public class UserController
 	private UserService service;
 	
 	@PostMapping(value="/add",consumes="application/json")
-	public void addFlight(@RequestBody User user)
+	public void addUser(@RequestBody User user)
 	{
 		service.addUser(user);
 	}
@@ -38,15 +38,15 @@ public class UserController
 		return service.getAllUser();
 	}
 	@DeleteMapping(value="del/{id}")
-	public void deleteFlight(@PathVariable("id") int id)
+	public void deleteUser(@PathVariable("id") int id)
 	{
-		service.removeFlight(id);
+		service.removeUser(id);
 	}
 	
 	@PutMapping(value="upd/{id}")
-	public User updateFlight(@RequestBody User user,@PathVariable("id") int id)
+	public User updateUser(@RequestBody User user,@PathVariable("id") int id)
 	{
-		service.updateFlight(id,user);
+		service.updateUser(id,user);
 		return user;
 	}
 }

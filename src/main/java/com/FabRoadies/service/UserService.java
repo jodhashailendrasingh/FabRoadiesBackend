@@ -12,8 +12,9 @@ public interface UserService {
 
 	User getByCode(int id);
 
-	void removeFlight(int code);
+	void updateUser(int id, User user);
 
-	void updateFlight(int id, User user);
+	void removeUser(int code);
+
 
 }

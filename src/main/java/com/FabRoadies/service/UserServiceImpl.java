@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void removeFlight(int code) {
+	public void removeUser(int code) {
 		// TODO Auto-generated method stub
 		repo.deleteById(code);
 		
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateFlight(int id, User user) {
+	public void updateUser(int id, User user) {
 		// TODO Auto-generated method stub
 		for(int i=0;i<getAllUser().size();i++)
 		{
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 		repo.save(user);
 		
 	}
-	
+
 	
 	
 	

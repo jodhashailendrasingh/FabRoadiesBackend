@@ -1,5 +1,6 @@
 package com.FabRoadies.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,10 @@ public class BusService {
 	public void save(Bus bus)
 	{  busRepository.save(bus);
 		
+	}
+	public List<Bus> findBuses(String source,String destination, Date departDate)
+	{
+		return busRepository.findBuses(source,destination,departDate);
 	}
 	public List<Bus> findBuses()
 	{
