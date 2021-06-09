@@ -3,6 +3,7 @@ package com.FabRoadies.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.FabRoadies.dto.BookingRequest;
 import com.FabRoadies.entity.Bus;
@@ -12,7 +13,7 @@ import com.FabRoadies.repo.BusRepository;
 import com.FabRoadies.repo.PassengerRepo;
 
 
-
+@Service
 public class BusBookService {
 
     @Autowired
