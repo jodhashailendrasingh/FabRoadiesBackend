@@ -34,32 +34,30 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	@Override
-	public void cancelBookTicket(Long ticketId, String username) {
-		// TODO Auto-generated method stub
-		
+	public void cancelBookTicket(Long ticketId) {
+		Ticket temp = new Ticket();
+		temp.setBooked(false);
+		repo.save(temp);
 	}
 
 	@Override
-	public List<Ticket> getAllTicketsOfUser(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Ticket> getAllTicketsOfUser(int userId) {		
+		User user = userrepo.getById(userId);
+		return user.getTickets();
 	}
 
 	@Override
 	public void deleteTicket(Long id) {
-		// TODO Auto-generated method stub
-		
+		repo.delete(repo.getById(id));
 	}
 
 	@Override
 	public List<Ticket> getAllTickets() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
-	public Ticket getTicket(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Ticket getTicketById(Long id) {
+		return repo.getById(id);
 	}
 }
