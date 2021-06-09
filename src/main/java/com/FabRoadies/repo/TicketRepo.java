@@ -10,6 +10,6 @@ import com.FabRoadies.entity.Ticket;
  * @author ibmjfsdb209
  * @version 1.0
  */
-public interface TicketRepo extends JpaRepository<Ticket, Integer>{
+public interface TicketRepo extends JpaRepository<Ticket, Long>{
 	List<Ticket> findByUserId(int userId);
 }

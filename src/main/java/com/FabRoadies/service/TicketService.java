@@ -9,9 +9,9 @@ import com.FabRoadies.entity.Ticket;
 @Service
 public interface TicketService {
 	Ticket bookTicket(String busId, int userId,int numberOfSeat);
-    void cancelBookTicket(Long ticketId, String username);
+    void cancelBookTicket(Long ticketId);
     List<Ticket> getAllTicketsOfUser(int userId);
     void deleteTicket(Long id);
     List<Ticket> getAllTickets();
-    Ticket getTicket(Long id);
+    Ticket getTicketById(Long id);
 }
