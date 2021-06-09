@@ -31,6 +31,7 @@ public class Bus {
     @OneToMany(mappedBy="bus")
     private List<Ticket> tickets;
     /////////////////////////
+    
     //localtime(temporalValue)
     //@Temporal(TemporalType.TIME)
    // private LocalTime departuretime;

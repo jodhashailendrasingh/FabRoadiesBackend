@@ -1,12 +1,20 @@
 package com.FabRoadies.dto;
 
 public class BookingRequest {
+	private int seatno;
     private String busno;
     private String name;
     private boolean gender;
     private int age;
     private String email;
     private String phone;
+    
+	public int getSeatno() {
+		return seatno;
+	}
+	public void setSeatno(int seatno) {
+		this.seatno = seatno;
+	}
 	public String getBusno() {
 		return busno;
 	}
