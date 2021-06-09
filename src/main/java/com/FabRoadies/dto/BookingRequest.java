@@ -1,6 +1,7 @@
 package com.FabRoadies.dto;
 
 public class BookingRequest {
+	private int userid;
 	private int seatno;
     private String busno;
     private String name;
@@ -9,6 +10,13 @@ public class BookingRequest {
     private String email;
     private String phone;
     
+    
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 	public int getSeatno() {
 		return seatno;
 	}

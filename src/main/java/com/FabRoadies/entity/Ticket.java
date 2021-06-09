@@ -90,5 +90,11 @@ public class Ticket {
 	public void setSeat(int seat) {
 		this.seat = seat;
 	}
-	
+	public List<Passenger> getPassanger() {
+		return passanger;
+	}
+	public void setPassanger(List<Passenger> passanger) {
+		this.passanger = passanger;
+	}
+
 }

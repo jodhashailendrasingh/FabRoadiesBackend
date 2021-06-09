@@ -20,7 +20,7 @@ public class LoginController {
     
 	@GetMapping(value="/login/{email}/{password}",produces="application/json")
 	public int getUser(@PathVariable("email") String email,@PathVariable("password") String password) {
-		//return service.getByEmailPassword(email,password);
+		
 		User user= service.getByEmailPassword(email,password);
 		System.out.println(user.getRoll().getRollid());
 		return user.getRoll().getRollid();
