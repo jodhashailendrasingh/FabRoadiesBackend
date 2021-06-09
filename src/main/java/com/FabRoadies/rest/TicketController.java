@@ -2,11 +2,7 @@ package com.FabRoadies.rest;
 
 import java.util.List;
 
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,24 +21,7 @@ public class TicketController {
 	@Autowired
 	private TicketService service;
 	///////
-	 @Autowired
-	 private JavaMailSender sender;
-	 /////
-	 @GetMapping("sendmail")
-	    private void sendEmail() throws Exception{
-	        MimeMessage message = sender.createMimeMessage();
-	        MimeMessageHelper helper = new MimeMessageHelper(message);
-	         
-	        helper.setTo("shailendrasingh9649933029@gmail.com");
-	        helper.setText("How are you?");
-	        helper.setSubject("Hi");
-	         
-	        sender.send(message);
-	    }
-	    
-	    
 	
-
 	@PostMapping(value="/add/ticket/{busId}/{userId}/{noOfSeat}",consumes="application/json")
 	public Ticket addTicket(@PathVariable("busId") String busId,@PathVariable("userId") int userId,@PathVariable int noOfSeat) {
 		return service.bookTicket(busId, userId, noOfSeat);
