@@ -43,7 +43,8 @@ public class TicketServiceImpl implements TicketService{
 	@Override
 	public List<Ticket> getAllTicketsOfUser(int userId) {		
 		User user = userrepo.getById(userId);
-		return user.getTickets();
+//		return user.getTickets();
+		return null;
 	}
 
 	@Override

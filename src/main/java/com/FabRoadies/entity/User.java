@@ -23,10 +23,6 @@ public class User {
     private String name;
     private String phoneNumber;
     ////////////////
-    @OneToMany(mappedBy="user")
-    private List<Ticket> tickets;
-    ///////////////////
-    
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="roll_id")
@@ -69,12 +65,4 @@ public class User {
 	public void setRoll(Roles roll) {
 		this.roll = roll;
 	}
-	public List<Ticket> getTickets() {
-		return tickets;
-	}
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-
-	
 }
