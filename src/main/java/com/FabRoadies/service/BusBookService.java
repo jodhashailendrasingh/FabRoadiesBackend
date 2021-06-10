@@ -56,8 +56,8 @@ public class BusBookService {
 		passenger.setName(reservationRequest.getName());
 		passenger.setGender(reservationRequest.isGender());
 		passenger.setAge(reservationRequest.getAge());
-		// passenger.setTicket(reservation);
-		passenger.setTicket(reservationRepository.getById((long) 39));
+		passenger.setTicket(reservation);
+//		passenger.setTicket(reservationRepository.getById((long) 39));
 		passengerRepository.save(passenger);
 
 		return savedReservation;
