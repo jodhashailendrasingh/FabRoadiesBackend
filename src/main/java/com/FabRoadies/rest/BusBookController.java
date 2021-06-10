@@ -1,5 +1,7 @@
 package com.FabRoadies.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,7 @@ public class BusBookController {
     private BusBookService reservationService;
 
 	@RequestMapping(value = "/completeReservation",method = RequestMethod.POST)
-	 public String completeReservation(@RequestBody BookingRequest reservationRequest){
+	 public String completeReservation(@RequestBody List<BookingRequest> reservationRequest){
       
         Ticket reservation=reservationService.bookBus(reservationRequest);
         return null;

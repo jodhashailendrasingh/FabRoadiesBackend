@@ -37,4 +37,7 @@ public class BusService {
 		return busRepository.findAll();
 
 	}
+	public Bus getBusById(String busno) {
+		return busRepository.getById(busno);
+	}
 }

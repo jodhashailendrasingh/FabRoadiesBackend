@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FabRoadies.dto.BookingRequest;
@@ -31,36 +32,41 @@ public class BusController {
 	   BusService busService;
 
 
-		@RequestMapping(value = "/findbus",method = RequestMethod.POST)
-		 public String completeReservation(@RequestBody Busquery query){
-	      
-	       // Ticket reservation=reservationService.bookBus(reservationRequest);
-			System.out.println(query.getSource()+" "+query.getDestination()+" "+query.getDateofDeparture());
-			
-	         return null;
-	      
-	    }  
+//		@RequestMapping(value = "/findbus",method = RequestMethod.POST)
+//		 public List<Bus> findFLights(@RequestBody Busquery query){
+//	      
+//			System.out.println(query.getSource()+" "+query.getDestination()+" "+query.getDateofDeparture());
+//			DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//			Date temp = formatter.parse(formatter.format(query.getDateofDeparture()));
+//			System.out.println(temp);
+////			List <Bus> buses = busService.findBuses(query.getSource(),query.getDestination(),query.getDateofDeparture());
+////		    System.out.println(buses);   
+////	        return  buses;
+//			return null;
+//	      
+//	    }  
+//		
+//		public List<Bus> findFLights(){
+//			
+//			return null;
+//		}
 
-	  /*
-	  @GetMapping("/findBuses/{source}/{destination}/{departDate}")
-	    public List<Bus> findFLights(@PathVariable("source") String source, @PathVariable("destination") String destination, @PathVariable("departDate") String departDate) throws ParseException 
+	  
+	  @GetMapping("/findBuses/{source}/{destination}")
+	    public List<Bus> findFLights(@PathVariable("source") String source, @PathVariable("destination") String destination,@RequestParam(name="departDate") @DateTimeFormat(pattern = "yyyy-mm-dd") Date departDate)
 	    {
 
 	    	//,@RequestBody @DateTimeFormat(pattern = "yyyy-mm-dd") Date departDate
 	        //List <Bus> buses = busService.findBuses(source,destination,departDate);
 	       
 	        //return  buses;
-	    //	System.out.println(departDate);
+	    	System.out.println(departDate);
 	    	
-	    	 //String testDateString = "02/04/2014";
-	    	 DateFormat df = new SimpleDateFormat("yyyy-mm-dd"); 
-	    	 Date d1 = df.parse(departDate);
-	    	 System.out.println("Date in dd/MM/yyyy format is: "+df.format(d1)+d1);
-	    	// List <Bus> buses = busService.findBuses(source,destination,df.format(d1));
+//	    	 List <Bus> buses = busService.findBuses(source,destination,departDate);
 	    	
 	    	return null;
 	    	
-	    }   */
+	    }   
 	   
 	
 	    @GetMapping("/admin/showAllBuses")

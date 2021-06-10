@@ -1,5 +1,6 @@
 package com.FabRoadies.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,11 @@ public class BusBookService {
 	@Autowired
 	private UserRepo userRepository;
 
-	public Ticket bookBus(BookingRequest reservationRequest) {
+	public Ticket bookBus(List<BookingRequest> reservationRequest) {
 
 		///////// Ticket add///////////
-
-		String busno = reservationRequest.getBusno();
-		int userid = reservationRequest.getUserid();
+		String busno = reservationRequest.get(0).getBusno();
+		int userid = reservationRequest.get(0).getUserid();
 
 		Optional<Bus> busOptional = busRepository.findById(busno);
 
@@ -49,19 +49,20 @@ public class BusBookService {
 		reservation.setUser(user);
 		Ticket savedReservation = reservationRepository.save(reservation);
 
-		///////// Passenger add///////////
+		for(int i=0;i<reservationRequest.size();i++) {
 
-		Passenger passenger = new Passenger();
-		passenger.setSeatno(reservationRequest.getSeatno());
-		passenger.setName(reservationRequest.getName());
-		passenger.setGender(reservationRequest.isGender());
-		passenger.setAge(reservationRequest.getAge());
-		passenger.setTicket(reservation);
-//		passenger.setTicket(reservationRepository.getById((long) 39));
-		passengerRepository.save(passenger);
+			///////// Passenger add///////////
 
+			Passenger passenger = new Passenger();
+			passenger.setSeatno(reservationRequest.get(i).getSeatno());
+			passenger.setName(reservationRequest.get(i).getName());
+			passenger.setGender(reservationRequest.get(i).isGender());
+			passenger.setAge(reservationRequest.get(i).getAge());
+			passenger.setTicket(reservation);
+//			passenger.setTicket(reservationRepository.getById((long) 39));
+			passengerRepository.save(passenger);
+			// return null;
+		}
 		return savedReservation;
-
-		// return null;
 	}
 }
