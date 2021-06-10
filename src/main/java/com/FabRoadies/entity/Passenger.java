@@ -1,3 +1,4 @@
+
 package com.FabRoadies.entity;
 
 import javax.persistence.Entity;

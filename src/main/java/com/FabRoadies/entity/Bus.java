@@ -1,6 +1,6 @@
 package com.FabRoadies.entity;
 
-import java.time.LocalTime;
+
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class Bus {
     private String departureCity;
     private String arrivalCity;
     @Temporal(TemporalType.DATE)
-    private Date dateofDeparture;
+    private Date dateofDeparture;  
     /////////////////////////
     @OneToMany(mappedBy="bus")
     private List<Ticket> tickets;
@@ -94,7 +94,7 @@ public class Bus {
 	}
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
-	}
+	}  
 	
     
     

@@ -33,6 +33,9 @@ public class UserController
 	            throw new RuntimeException();
 	        }  
 		service.addUser(user,roll);
+		
+		
+		
 	}
 	
 	//////////////
