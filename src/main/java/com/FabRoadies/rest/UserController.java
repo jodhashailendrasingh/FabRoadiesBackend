@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fabRoadies.entity.User;
 import com.fabRoadies.repo.UserRepo;
 import com.fabRoadies.service.UserService;
+import com.fabRoadies.utils.Emailsend;
 
 
 
@@ -24,6 +25,8 @@ public class UserController
 	private UserService service;
     @Autowired
     private UserRepo userRepository;
+	@Autowired
+	private Emailsend emailsend;
 	
 	@PostMapping(value="/add/{roll}",consumes="application/json")
 	public void addUser(@RequestBody User user,@PathVariable("roll") int roll)
@@ -33,6 +36,15 @@ public class UserController
 	            throw new RuntimeException();
 	        }  
 		service.addUser(user,roll);
+		String msg="Hello Dear \n"
+			    	+ "We are pleased to inform you that you are successfully registered with us.\n"
+			    	+ user.getName()+"\n"
+			    	+user.getId()+"\n";
+				
+				
+				
+		emailsend.sendSimpleEmail(user.getEmail(),msg, "welcome");
+		
 		
 		
 		

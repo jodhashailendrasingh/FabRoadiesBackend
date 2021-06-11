@@ -2,6 +2,8 @@ package com.fabRoadies.rest;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +22,7 @@ public class BusBookController {
     private BusBookService reservationService;
 
 	@RequestMapping(value = "/completeReservation",method = RequestMethod.POST)
-	 public String completeReservation(@RequestBody List<BookingRequest> reservationRequest){
+	 public String completeReservation(@RequestBody List<BookingRequest> reservationRequest) throws MessagingException{
       
         Ticket reservation=reservationService.bookBus(reservationRequest);
         return null;
