@@ -19,6 +19,7 @@ import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
 import com.fabRoadies.utils.PdfGenerator;
+import com.fabRoadies.utils.SendSms;
 import com.itextpdf.text.DocumentException;
 
 @Service
@@ -81,6 +82,10 @@ public class BusBookService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+//		Message Sent
+		SendSms.sendsms("hello from team D FabRoadies", "7976378593");
+		System.out.println("message sent");
 
 		return savedReservation;
 	}
