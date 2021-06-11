@@ -1,12 +1,15 @@
 package com.fabRoadies.entity;
 
-
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
 
 import java.util.List;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 @Table(name = "users")
@@ -53,10 +56,16 @@ public class User {
 		this.email = email;
 	}
 	public String getPassword() {
-		return password;
+
+		Decoder decoder = Base64.getDecoder();
+		String passwords = new String(decoder.decode(this.password.getBytes()));
+		return passwords;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		Encoder encoder = Base64.getEncoder();
+		String passwords = encoder.encodeToString(password.getBytes());
+		//System.out.println(encodedPassword);
+		this.password = passwords;
 	}
 	
 	public Roles getRoll() {

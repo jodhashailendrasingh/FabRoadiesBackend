@@ -34,8 +34,12 @@ public class UserController
 		 User foundUser = userRepository.findOneByEmail(user.getEmail());
 	        if (foundUser != null) {
 	            throw new RuntimeException();
+	           
 	        }  
+	       
+	        
 		service.addUser(user,roll);
+		//System.out.print(service.getByCode(user.getId()).getPassword());
 		String msg="Hello Dear \n"
 			    	+ "We are pleased to inform you that you are successfully registered with us.\n"
 			    	+ user.getName()+"\n"
