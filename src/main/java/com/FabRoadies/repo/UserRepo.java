@@ -1,4 +1,4 @@
-package com.FabRoadies.repo;
+package com.fabRoadies.repo;
 
 import java.util.Date;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.FabRoadies.entity.Bus;
-import com.FabRoadies.entity.User;
+import com.fabRoadies.entity.Bus;
+import com.fabRoadies.entity.User;
 
 public interface UserRepo  extends JpaRepository<User, Integer>
 	{  

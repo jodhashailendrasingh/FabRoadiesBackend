@@ -1,4 +1,4 @@
-package com.FabRoadies.rest;
+package com.fabRoadies.rest;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FabRoadies.entity.Ticket;
-import com.FabRoadies.service.TicketService;
+import com.fabRoadies.entity.Ticket;
+import com.fabRoadies.service.TicketService;
 
 @CrossOrigin
 @RestController

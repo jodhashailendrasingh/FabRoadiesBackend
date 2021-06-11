@@ -1,4 +1,4 @@
-package com.FabRoadies.rest;
+package com.fabRoadies.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FabRoadies.entity.User;
-import com.FabRoadies.repo.UserRepo;
-import com.FabRoadies.service.LoginService;
-import com.FabRoadies.service.UserService;
+import com.fabRoadies.entity.User;
+import com.fabRoadies.repo.UserRepo;
+import com.fabRoadies.service.LoginService;
+import com.fabRoadies.service.UserService;
 
 @CrossOrigin
 @RestController  

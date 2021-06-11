@@ -1,10 +1,10 @@
-package com.FabRoadies.service;
+package com.fabRoadies.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.FabRoadies.entity.Ticket;
+import com.fabRoadies.entity.Ticket;
 
 @Service
 public interface TicketService {

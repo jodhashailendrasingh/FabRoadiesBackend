@@ -1,10 +1,10 @@
-package com.FabRoadies.service;
+package com.fabRoadies.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.FabRoadies.entity.User;
-import com.FabRoadies.repo.UserRepo;
+import com.fabRoadies.entity.User;
+import com.fabRoadies.repo.UserRepo;
 
 @Service
 public class LoginService {

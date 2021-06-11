@@ -1,4 +1,4 @@
-package com.FabRoadies.rest;
+package com.fabRoadies.rest;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FabRoadies.dto.BookingRequest;
-import com.FabRoadies.entity.Bus;
-import com.FabRoadies.entity.Busquery;
-import com.FabRoadies.entity.Ticket;
-import com.FabRoadies.service.BusBookService;
-import com.FabRoadies.service.BusService;
+import com.fabRoadies.dto.BookingRequest;
+import com.fabRoadies.entity.Bus;
+import com.fabRoadies.entity.Busquery;
+import com.fabRoadies.entity.Ticket;
+import com.fabRoadies.service.BusBookService;
+import com.fabRoadies.service.BusService;
 
 @RestController
 @CrossOrigin(origins = { "*" })

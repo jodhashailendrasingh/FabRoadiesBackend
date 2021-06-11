@@ -1,8 +1,8 @@
-package com.FabRoadies.service;
+package com.fabRoadies.service;
 
 import java.util.List;
 
-import com.FabRoadies.entity.User;
+import com.fabRoadies.entity.User;
 
 public interface UserService {
 

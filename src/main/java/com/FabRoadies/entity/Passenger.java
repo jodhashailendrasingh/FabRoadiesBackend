@@ -1,5 +1,5 @@
 
-package com.FabRoadies.entity;
+package com.fabRoadies.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

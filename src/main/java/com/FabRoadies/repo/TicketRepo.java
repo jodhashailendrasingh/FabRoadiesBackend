@@ -1,13 +1,13 @@
-package com.FabRoadies.repo;
+package com.fabRoadies.repo;
 
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.FabRoadies.entity.Ticket;
+import com.fabRoadies.entity.Ticket;
 
 /**
- * @author ibmjfsdb209
+ * @author Dhruv Marothi
  * @version 1.0
  */
 public interface TicketRepo extends JpaRepository<Ticket, Long>{

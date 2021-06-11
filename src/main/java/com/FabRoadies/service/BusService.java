@@ -1,4 +1,4 @@
-package com.FabRoadies.service;
+package com.fabRoadies.service;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.FabRoadies.entity.Bus;
-import com.FabRoadies.repo.BusRepository;
+import com.fabRoadies.entity.Bus;
+import com.fabRoadies.repo.BusRepository;
 
 
 

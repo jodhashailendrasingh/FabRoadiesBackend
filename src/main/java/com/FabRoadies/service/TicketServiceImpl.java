@@ -1,16 +1,16 @@
-package com.FabRoadies.service;
+package com.fabRoadies.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.FabRoadies.entity.Bus;
-import com.FabRoadies.entity.Ticket;
-import com.FabRoadies.entity.User;
-import com.FabRoadies.repo.BusRepository;
-import com.FabRoadies.repo.TicketRepo;
-import com.FabRoadies.repo.UserRepo;
+import com.fabRoadies.entity.Bus;
+import com.fabRoadies.entity.Ticket;
+import com.fabRoadies.entity.User;
+import com.fabRoadies.repo.BusRepository;
+import com.fabRoadies.repo.TicketRepo;
+import com.fabRoadies.repo.UserRepo;
 
 @Service
 public class TicketServiceImpl implements TicketService{

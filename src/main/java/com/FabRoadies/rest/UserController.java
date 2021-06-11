@@ -1,4 +1,4 @@
-package com.FabRoadies.rest;
+package com.fabRoadies.rest;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FabRoadies.entity.User;
-import com.FabRoadies.repo.UserRepo;
-import com.FabRoadies.service.UserService;
+import com.fabRoadies.entity.User;
+import com.fabRoadies.repo.UserRepo;
+import com.fabRoadies.service.UserService;
 
 
 

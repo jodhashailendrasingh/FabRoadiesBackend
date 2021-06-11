@@ -1,4 +1,4 @@
-package com.FabRoadies.entity;
+package com.fabRoadies.entity;
 
 
 

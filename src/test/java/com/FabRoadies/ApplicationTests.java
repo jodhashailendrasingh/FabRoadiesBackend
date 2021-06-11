@@ -1,4 +1,4 @@
-package com.FabRoadies;
+package com.fabRoadies;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

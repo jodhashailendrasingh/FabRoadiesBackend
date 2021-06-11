@@ -1,5 +1,10 @@
-package com.FabRoadies.dto;
+package com.fabRoadies.dto;
 
+/**
+ * Reperesents Booking request entity encountered when ticket is booked.
+ * @author Dhruv Marothi & Shailendra
+ * @version 1.0
+ */
 public class BookingRequest {
 	private int userid;
 	private int seatno;

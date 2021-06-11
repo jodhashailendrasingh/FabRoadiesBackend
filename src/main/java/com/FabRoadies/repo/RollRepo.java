@@ -1,10 +1,10 @@
-package com.FabRoadies.repo;
+package com.fabRoadies.repo;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.FabRoadies.entity.Roles;
+import com.fabRoadies.entity.Roles;
 
 public interface RollRepo extends JpaRepository<Roles,Integer>  {
 

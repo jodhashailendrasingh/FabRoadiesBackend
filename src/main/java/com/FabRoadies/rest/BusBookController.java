@@ -1,4 +1,4 @@
-package com.FabRoadies.rest;
+package com.fabRoadies.rest;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FabRoadies.dto.BookingRequest;
-import com.FabRoadies.entity.Ticket;
-import com.FabRoadies.service.BusBookService;
+import com.fabRoadies.dto.BookingRequest;
+import com.fabRoadies.entity.Ticket;
+import com.fabRoadies.service.BusBookService;
 
 @RestController
 @CrossOrigin(origins= {"*"})
