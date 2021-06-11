@@ -1,5 +1,6 @@
 package com.FabRoadies.service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -27,9 +28,10 @@ public class BusService {
 		
 	}
 	
-	public List<Bus> findBuses(String source,String destination, Date departDate)
+	public List<Bus> findBuses(String source,String destination, LocalDate departDate)
 	{
 		return busRepository.findBuses(source,destination,departDate);
+//		return null;
 	}
 	
 	public List<Bus> findBuses()

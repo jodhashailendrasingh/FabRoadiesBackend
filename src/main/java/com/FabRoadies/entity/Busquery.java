@@ -1,5 +1,6 @@
 package com.FabRoadies.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -17,8 +18,7 @@ public class Busquery {
     
 	private String source;
     private String destination;
-    @Temporal(TemporalType.DATE)
-    private Date dateofDeparture;
+    private LocalDate dateOfDeparture;
 	public String getSource() {
 		return source;
 	}
@@ -31,13 +31,16 @@ public class Busquery {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	public Date getDateofDeparture() {
-		return dateofDeparture;
+	public int getId() {
+		return id;
 	}
-	public void setDateofDeparture(Date dateofDeparture) {
-		this.dateofDeparture = dateofDeparture;
-	}  
-    
-    
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	public LocalDate getDateOfDeparture() {
+		return dateOfDeparture;
+	}
+	public void setDateOfDeparture(LocalDate dateOfDeparture) {
+		this.dateOfDeparture = dateOfDeparture;
+	}
 }

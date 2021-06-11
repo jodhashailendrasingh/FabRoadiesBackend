@@ -1,6 +1,8 @@
 package com.FabRoadies.entity;
 
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -25,8 +27,9 @@ public class Bus {
     private String busType;
     private String departureCity;
     private String arrivalCity;
-    @Temporal(TemporalType.DATE)
-    private Date dateofDeparture;  
+//    @Temporal(TemporalType.DATE)
+	private LocalDate dateOfDeparture;
+//    private Date dateofDeparture;  
     /////////////////////////
 //    @OneToMany(mappedBy="bus")
 //    private List<Ticket> tickets;
@@ -64,13 +67,12 @@ public class Bus {
 	}
 	public void setArrivalCity(String arrivalcity) {
 		this.arrivalCity = arrivalcity;
+	}	
+	public LocalDate getDateOfDeparture() {
+		return dateOfDeparture;
 	}
-	
-	public Date getDateofDeparture() {
-		return dateofDeparture;
-	}
-	public void setDateofDeparture(Date dateofDeparture) {
-		this.dateofDeparture = dateofDeparture;
+	public void setDateofDeparture(LocalDate dateOfDeparture) {
+		this.dateOfDeparture = dateOfDeparture;
 	}
 	public Date getDeparturetime() {
 		return departuretime;
@@ -78,13 +80,6 @@ public class Bus {
 	public void setDeparturetime(Date departuretime) {
 		this.departuretime = departuretime;
 	}
-	public String getBusType() {
-		return busType;
-	}
-	public void setBusType(String busType) {
-		this.busType = busType;
-	}
-
 	
 	
 	///////////////
