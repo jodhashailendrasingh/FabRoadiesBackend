@@ -42,7 +42,7 @@ public class Ticket {
     private User user;
     //////////////////////////
     @OneToMany(mappedBy="ticket")
-    private List<Passenger> passanger;
+    private List<Passenger> passenger;
     
     private boolean booked=true;
     private int seat;
@@ -90,11 +90,11 @@ public class Ticket {
 	public void setSeat(int seat) {
 		this.seat = seat;
 	}
-	public List<Passenger> getPassanger() {
-		return passanger;
+	public List<Passenger> getPassenger() {
+		return passenger;
 	}
-	public void setPassanger(List<Passenger> passanger) {
-		this.passanger = passanger;
+	public void setPassenger(List<Passenger> passenger) {
+		this.passenger = passenger;
 	}
 
 }

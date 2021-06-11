@@ -1,5 +1,6 @@
 package com.fabRoadies.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,11 +18,12 @@ import com.fabRoadies.repo.BusRepository;
 import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
+import com.fabRoadies.utils.PdfGenerator;
+import com.itextpdf.text.DocumentException;
 
 @Service
 @Transactional
 public class BusBookService {
-
 
 	@Autowired
 	private BusRepository busRepository;
@@ -32,7 +34,6 @@ public class BusBookService {
 	private TicketRepo reservationRepository;
 	@Autowired
 	private UserRepo userRepository;
-	
 
 	public Ticket bookBus(List<BookingRequest> reservationRequest) {
 
@@ -54,20 +55,33 @@ public class BusBookService {
 		reservation.setUser(user);
 		Ticket savedReservation = reservationRepository.save(reservation);
 
-		for(int i=0;i<reservationRequest.size();i++) {
+		List<Passenger> listOfPassenger = new ArrayList<>();
+		for (int i = 0; i < reservationRequest.size(); i++) {
 
 			///////// Passenger add///////////
 
 			Passenger passenger = new Passenger();
 			passenger.setSeatno(reservationRequest.get(i).getSeatno());
 			passenger.setName(reservationRequest.get(i).getName());
-			passenger.setGender(reservationRequest.get(i).isGender());
+			passenger.setGender(reservationRequest.get(i).getGender());
 			passenger.setAge(reservationRequest.get(i).getAge());
 			passenger.setTicket(reservation);
 //			passenger.setTicket(reservationRepository.getById((long) 39));
+			listOfPassenger.add(passenger);
 			passengerRepository.save(passenger);
 			// return null;
 		}
+		try
+
+		{
+			PdfGenerator.generateItenary(listOfPassenger,
+					"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"
+							+ "Passenger.pdf");
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return savedReservation;
 	}
 }

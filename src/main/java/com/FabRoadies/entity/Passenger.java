@@ -18,7 +18,7 @@ public class Passenger {
 	    private int seatno;
 	    
 	    private String name;
-	    private boolean gender;
+	    private String gender;
 	    private int age;
 	    
 		@JsonBackReference
@@ -45,10 +45,10 @@ public class Passenger {
 		public void setName(String name) {
 			this.name = name;
 		}
-		public boolean getGender() {
+		public String getGender() {
 			return gender;
 		}
-		public void setGender(boolean gender) {
+		public void setGender(String gender) {
 			this.gender = gender;
 		}
 		public int getAge() {

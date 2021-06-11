@@ -2,17 +2,12 @@ package com.fabRoadies.entity;
 
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -55,7 +50,12 @@ public class Bus {
 	public void setAgency(String agency) {
 		this.agency = agency;
 	}
-	
+	public String getBusType() {
+		return busType;
+	}
+	public void setBusType(String busType) {
+		this.busType = busType;
+	}
 	public String getDepartureCity() {
 		return departureCity;
 	}
@@ -71,7 +71,7 @@ public class Bus {
 	public LocalDate getDateOfDeparture() {
 		return dateOfDeparture;
 	}
-	public void setDateofDeparture(LocalDate dateOfDeparture) {
+	public void setDateOfDeparture(LocalDate dateOfDeparture) {
 		this.dateOfDeparture = dateOfDeparture;
 	}
 	public Date getDeparturetime() {

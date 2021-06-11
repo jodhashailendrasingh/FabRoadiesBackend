@@ -10,7 +10,7 @@ public class BookingRequest {
 	private int seatno;
     private String busno;
     private String name;
-    private boolean gender;
+    private String gender;
     private int age;
     private String email;
     private String phone;
@@ -40,10 +40,10 @@ public class BookingRequest {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean isGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(boolean gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public int getAge() {
