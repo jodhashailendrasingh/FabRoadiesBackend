@@ -22,15 +22,16 @@ public class TicketController {
 	private TicketService service;
 	///////
 	
-	@PostMapping(value="/add/ticket/{busId}/{userId}/{noOfSeat}",consumes="application/json")
+	//This method is now is attached with BusBookService Module.
+	/*@PostMapping(value="/add/ticket/{busId}/{userId}/{noOfSeat}",consumes="application/json")
 	public Ticket addTicket(@PathVariable("busId") String busId,@PathVariable("userId") int userId,@PathVariable int noOfSeat) {
 		return service.bookTicket(busId, userId, noOfSeat);
-	}
+	}*/
 	
-	@PutMapping(value="/cancel/{ticketId}")
-	public void cancelBookTicket(@PathVariable("ticketId") Long ticketId) {
-		service.cancelBookTicket(ticketId);
-	}
+//	@PutMapping(value="/cancel/{ticketId}")
+//	public void cancelBookTicket(@PathVariable("ticketId") Long ticketId) {
+//		service.cancelBookTicket(ticketId);
+//	}
 	
 	@GetMapping(value="/get/userTickets/{userId}",produces="application/json")
 	public List<Ticket> getAllTicketOfUser(@PathVariable("userId") int userId){

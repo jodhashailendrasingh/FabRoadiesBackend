@@ -22,6 +22,11 @@ import com.fabRoadies.utils.PdfGenerator;
 import com.fabRoadies.utils.SendSms;
 import com.itextpdf.text.DocumentException;
 
+/**
+ * Reperesents Booking request service encountered when ticket is booked.
+ * @author Dhruv Marothi & Shailendra & Pratik
+ * @version 3.0
+ */
 @Service
 @Transactional
 public class BusBookService {
@@ -54,6 +59,7 @@ public class BusBookService {
 		Ticket reservation = new Ticket();
 		reservation.setBus(bus);
 		reservation.setUser(user);
+		//Price and Reservation Date component to be added
 		Ticket savedReservation = reservationRepository.save(reservation);
 
 		List<Passenger> listOfPassenger = new ArrayList<>();
@@ -79,7 +85,6 @@ public class BusBookService {
 					"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"
 							+ "Passenger.pdf");
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

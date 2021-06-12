@@ -34,7 +34,6 @@ public class UserController
 		 User foundUser = userRepository.findOneByEmail(user.getEmail());
 	        if (foundUser != null) {
 	            throw new RuntimeException();
-	           
 	        }  
 	       
 	        
@@ -44,19 +43,15 @@ public class UserController
 			    	+ "We are pleased to inform you that you are successfully registered with us.\n"
 			    	+ user.getName()+"\n"
 			    	+user.getId()+"\n";
-				
-				
-				
-		emailsend.sendSimpleEmail(user.getEmail(),msg, "welcome");
 		
-		
-		
+				
+		emailsend.sendSimpleEmail(user.getEmail(),msg, "welcome");	
 		
 	}
 	
 	//////////////
 	
-	@GetMapping(value="/users/{code}",produces="application/json")
+	@GetMapping(value="/user/{code}",produces="application/json")
 	public User getUser(@PathVariable("code") int code) {
 		return service.getByCode(code);
 	}
@@ -71,10 +66,10 @@ public class UserController
 		service.removeUser(id);
 	}
 	
-	@PutMapping(value="upd/{id}")
-	public User updateUser(@RequestBody User user,@PathVariable("id") int id)
+	@PutMapping(value="/user/update")
+	public User updateUser(@RequestBody User user)
 	{
-		service.updateUser(id,user);
+		service.updateUser(user);
 		return user;
 	}
 }

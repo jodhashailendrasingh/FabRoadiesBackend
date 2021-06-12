@@ -57,18 +57,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(int id, User user) {
-		// TODO Auto-generated method stub
-		for(int i=0;i<getAllUser().size();i++)
-		{
-			User u=getAllUser().get(i);
-			if(u.equals(id)) 
-			{	
-				getAllUser().set(i, user);
-				return;
-			}
+	public void updateUser(User user) {
+		if(repo.getById(user.getId())!=null) {
+			repo.save(user);
 		}
-		
+		else {
+			System.out.println("User does not exist");
+		}		
 		repo.save(user);
 		
 	}

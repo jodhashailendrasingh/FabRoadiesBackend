@@ -2,7 +2,7 @@ package com.fabRoadies.dto;
 
 /**
  * Reperesents Booking request entity encountered when ticket is booked.
- * @author Dhruv Marothi & Shailendra
+ * @author Shailendra
  * @version 1.0
  */
 public class BookingRequest {

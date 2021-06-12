@@ -1,45 +1,29 @@
 package com.fabRoadies.service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fabRoadies.entity.Bus;
-import com.fabRoadies.repo.BusRepository;
 
-
-
+/**
+ * Service interface for Bus
+ * @author Dhruv Marothi
+ *@version 1.0
+ */
 @Service
-public class BusService {
-
-	@Autowired
-	BusRepository busRepository;
+public interface BusService {
 	
-	public void save(Bus bus)
-	{  busRepository.save(bus);
-		
-	}
+	void save(Bus bus);
 	
-	public void delete(Bus bus)
-	{  busRepository.delete(bus);
-		
-	}
+	void delete(String busno);
 	
-	public List<Bus> findBuses(String source,String destination, LocalDate departDate)
-	{
-		return busRepository.findBuses(source,destination,departDate);
-//		return null;
-	}
+	List<Bus> findBuses(String source,String destination, LocalDate departDate);
 	
-	public List<Bus> findBuses()
-	{
-		return busRepository.findAll();
-
-	}
-	public Bus getBusById(String busno) {
-		return busRepository.getById(busno);
-	}
+	List<Bus> findBuses();
+	
+	Bus getBusById(String busno);
+	
+	void update(Bus bus);
 }

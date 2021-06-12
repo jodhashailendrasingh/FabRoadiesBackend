@@ -6,13 +6,11 @@ import com.fabRoadies.entity.User;
 
 public interface UserService {
 
-
-
 	List<User> getAllUser();
 
 	User getByCode(int id);
 
-	void updateUser(int id, User user);
+	void updateUser(User user);
 
 	void removeUser(int code);
 

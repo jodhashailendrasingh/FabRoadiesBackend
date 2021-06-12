@@ -1,32 +1,26 @@
 package com.fabRoadies.rest;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fabRoadies.dto.BookingRequest;
 import com.fabRoadies.entity.Bus;
 import com.fabRoadies.entity.Busquery;
-import com.fabRoadies.entity.Ticket;
-import com.fabRoadies.service.BusBookService;
 import com.fabRoadies.service.BusService;
 
+/**
+ * This modules controls all bus activities.
+ * @author Dhruv Marothi & Shailendra
+ * @version 2.5
+ */
 @RestController
 @CrossOrigin(origins = { "*" })
 public class BusController {
@@ -34,6 +28,7 @@ public class BusController {
 	@Autowired
 	BusService busService;
 
+	//List all Buses wrt their source,destination,dateOfDeparture
 	@PostMapping("/findBuses")
 	public List<Bus> findBusesByRoute(@RequestBody Busquery query){
 //			@PathVariable("source") String source, @PathVariable("destination") String destination,
@@ -45,7 +40,7 @@ public class BusController {
 	}
 
 	@GetMapping("/admin/showAllBuses")
-	@RequestMapping("/admin/showAllBuses")
+//	@RequestMapping("/admin/showAllBuses")
 	public List<Bus> showAllBuses() {
 		return busService.findBuses();
 	}
@@ -55,13 +50,17 @@ public class BusController {
 //		LocalDate dateofDeparture = (LocalDate.parse(date)).minus(1, ChronoUnit.MONTHS);
 //		bus.setDateofDeparture(dateofDeparture);
 		busService.save(bus);
-
 	}
 
-	@PostMapping("/admin/deleteBus")
-	public void deleteBus(@RequestBody Bus bus) {
-		busService.delete(bus);
-
+	@DeleteMapping("/admin/deleteBus/{id}")
+	public void deleteBus(@PathVariable("id") String id) {
+		busService.delete(id);
+	}
+	
+	//Updates the Bus Details
+	@PutMapping(path = "/bus/edit", produces = "application/json")
+	public void updateEmp(@RequestBody Bus bus) {
+		busService.update(bus);
 	}
 
 }
