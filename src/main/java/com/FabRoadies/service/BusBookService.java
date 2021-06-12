@@ -1,9 +1,12 @@
 package com.fabRoadies.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,7 @@ import com.fabRoadies.repo.BusRepository;
 import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
+import com.fabRoadies.utils.Emailsend;
 import com.fabRoadies.utils.PdfGenerator;
 import com.fabRoadies.utils.SendSms;
 import com.itextpdf.text.DocumentException;
@@ -40,8 +44,10 @@ public class BusBookService {
 	private TicketRepo reservationRepository;
 	@Autowired
 	private UserRepo userRepository;
+	@Autowired
+	private Emailsend service;
 
-	public Ticket bookBus(List<BookingRequest> reservationRequest) {
+	public Ticket bookBus(List<BookingRequest> reservationRequest) throws MessagingException {
 
 		///////// Ticket add///////////
 		String busno = reservationRequest.get(0).getBusno();
@@ -59,7 +65,11 @@ public class BusBookService {
 		Ticket reservation = new Ticket();
 		reservation.setBus(bus);
 		reservation.setUser(user);
+		reservation.setReservationDate(LocalDate.now());
+		
 		//Price and Reservation Date component to be added
+	    reservation.setPrice(bus.getPrice()*reservationRequest.size());//done without dhruv
+		
 		Ticket savedReservation = reservationRepository.save(reservation);
 
 		List<Passenger> listOfPassenger = new ArrayList<>();
@@ -81,16 +91,20 @@ public class BusBookService {
 		try
 
 		{
-			PdfGenerator.generateItenary(listOfPassenger,
-					"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"
-							+ "Passenger.pdf");
+			PdfGenerator.generateItenary(listOfPassenger,"C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf");
+		
+			String s="C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf";
+			service.sendEmailWithAttachment(reservationRequest.get(0).getEmail(),
+					"This is Email Body with Attachment",
+					"This email has attachment",
+					s);
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
 		
 //		Message Sent
 //		hello This is FabRoadies.Have a safe Journey
-//		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey", "9123686800");
+		//SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey enjoy trip",reservationRequest.get(0).getPhone());
 //		System.out.println("message sent");
 		return savedReservation;
 	}

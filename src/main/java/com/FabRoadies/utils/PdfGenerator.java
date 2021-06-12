@@ -58,7 +58,11 @@ public class PdfGenerator {
 //	}
     
     public static PdfPTable generateTable(List<Passenger> reservation){
+    	
+    	
+    	
         PdfPTable table=new PdfPTable(2);
+        
 
         PdfPCell cell = new PdfPCell(new Phrase("Ticket Details"));
 
@@ -69,7 +73,9 @@ public class PdfGenerator {
         cell.setColspan(2);
         table.addCell(cell);
 
-    */   
+    */  
+        table.addCell("Reservation Date");
+        table.addCell(reservation.get(0).getTicket().getReservationDate()+""); 
         table.addCell("Bus Number");
         table.addCell(reservation.get(0).getTicket().getBus().getBusno()); 
         table.addCell("Ticket Number");
@@ -77,7 +83,7 @@ public class PdfGenerator {
         
         table.addCell("Departure City");
         table.addCell(reservation.get(0).getTicket().getBus().getDepartureCity());
-        table.addCell("Arival City");
+        table.addCell("Arrival City");
         table.addCell(reservation.get(0).getTicket().getBus().getArrivalCity());
 
        
@@ -89,6 +95,8 @@ public class PdfGenerator {
           table.addCell(" "+reservation.get(i).getSeatno());
 
         }
+        table.addCell("Total Cost");
+        table.addCell(reservation.get(0).getTicket().getPrice()+"");
      
         return table;
     }

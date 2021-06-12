@@ -24,6 +24,7 @@ public class Bus {
     private String arrivalCity;
 //    @Temporal(TemporalType.DATE)
 	private LocalDate dateOfDeparture;
+	private int price;
 //    private Date dateofDeparture;  
     /////////////////////////
 //    @OneToMany(mappedBy="bus")
@@ -38,6 +39,14 @@ public class Bus {
     @Temporal(TemporalType.TIME)
     private Date departuretime;
     
+    
+    
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public String getBusno() {
 		return busno;
 	}

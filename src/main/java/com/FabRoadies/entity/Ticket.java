@@ -1,5 +1,6 @@
 package com.fabRoadies.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Ticket {
 	@NotNull
     private double price;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm")
-    private Date reservationDate;
+    private LocalDate reservationDate;
     /////////////////////////
     @ManyToOne
     @JsonBackReference
@@ -45,7 +46,7 @@ public class Ticket {
     private List<Passenger> passenger;
     
     private boolean booked=true;
-    private int seat;
+
     
     //Getters and Setters
     public long getTicketId() {
@@ -66,11 +67,11 @@ public class Ticket {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public Date getReservationDate() {
+	public LocalDate getReservationDate() {
 		return reservationDate;
 	}
-	public void setReservationDate(Date reservationDate) {
-		this.reservationDate = reservationDate;
+	public void setReservationDate(LocalDate localDate) {
+		this.reservationDate = localDate;
 	}
 	public User getUser() {
 		return user;
@@ -84,12 +85,7 @@ public class Ticket {
 	public void setBooked(boolean booked) {
 		this.booked = booked;
 	}
-	public int getSeat() {
-		return seat;
-	}
-	public void setSeat(int seat) {
-		this.seat = seat;
-	}
+
 	public List<Passenger> getPassenger() {
 		return passenger;
 	}

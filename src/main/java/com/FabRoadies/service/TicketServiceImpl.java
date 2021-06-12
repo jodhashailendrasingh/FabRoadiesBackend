@@ -30,7 +30,7 @@ public class TicketServiceImpl implements TicketService{
 		Ticket temp = new Ticket();
 		temp.setBus(bus);
 		temp.setUser(user);
-		temp.setSeat(numberOfSeat);
+		
 		return repo.save(temp);
 	}
 
