@@ -85,8 +85,8 @@ public class BusBookService {
 		
 //		Message Sent
 //		hello This is FabRoadies.Have a safe Journey
-		SendSms.sendsms("Work Done Come Back", "9649933029");
-		System.out.println("message sent");
+//		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey", "9123686800");
+//		System.out.println("message sent");
 		return savedReservation;
 	}
 }
