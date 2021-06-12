@@ -13,8 +13,8 @@ public class SendSms {
 	public static void sendsms(String message, String number) {
 
 		try {
-			String api_key = "XUFwyQfrbC8OPuNzK5I73E2t9knLSZW6AVBTpgsHJ1lvMdhmeofSnK2IA7yMkvCQipztlbN56Ywe90j4";
-			String sendId = "FSTSMS";
+			String api_key = "6oMmyczsHKaNVrTlqwdwmoFLMs0STXhs2uvxKZGXp8SMVM0a6TtRTlbNKZeC";
+			String sendId ="TXTIND";
 			message = URLEncoder.encode(message, "UTF-8");
 			String language="english";
 			String route="p";
@@ -31,8 +31,8 @@ public class SendSms {
 			con.setRequestProperty("cache-control", "no-cache");
 			System.out.println("Wait..............");
 			
-//			int code=con.getResponseCode();
-//			System.out.println("Response code : "+code);		
+			int code=con.getResponseCode();
+			System.out.println("Response code : "+code);		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

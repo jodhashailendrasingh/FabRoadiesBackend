@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import com.fabRoadies.repo.BusRepository;
 import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
-import com.fabRoadies.utils.Emailsend;
 import com.fabRoadies.utils.PdfGenerator;
 import com.fabRoadies.utils.SendSms;
 import com.itextpdf.text.DocumentException;
@@ -37,10 +35,8 @@ public class BusBookService {
 	private TicketRepo reservationRepository;
 	@Autowired
 	private UserRepo userRepository;
-	@Autowired
-	private Emailsend service;
 
-	public Ticket bookBus(List<BookingRequest> reservationRequest) throws MessagingException  {
+	public Ticket bookBus(List<BookingRequest> reservationRequest) {
 
 		///////// Ticket add///////////
 		String busno = reservationRequest.get(0).getBusno();
@@ -80,23 +76,17 @@ public class BusBookService {
 
 		{
 			PdfGenerator.generateItenary(listOfPassenger,
-					"C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf");
-			String s="C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf";
-			service.sendEmailWithAttachment(reservationRequest.get(0).getEmail(),
-					"This is Email Body with Attachmen",
-					"This email has attachment",
-					s);
+					"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"
+							+ "Passenger.pdf");
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 //		Message Sent
-		SendSms.sendsms("hello from team D FabRoadies", "7976378593");
+//		hello This is FabRoadies.Have a safe Journey
+		SendSms.sendsms("Work Done Come Back", "9649933029");
 		System.out.println("message sent");
-
 		return savedReservation;
 	}
-
-
 }
