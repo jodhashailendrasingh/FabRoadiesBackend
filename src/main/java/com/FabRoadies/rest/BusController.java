@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fabRoadies.entity.Bus;
 import com.fabRoadies.entity.Busquery;
+import com.fabRoadies.entity.Ticket;
 import com.fabRoadies.service.BusService;
 
 /**
@@ -62,6 +63,11 @@ public class BusController {
 	@PutMapping(path = "/bus/edit", produces = "application/json")
 	public void updateEmp(@RequestBody Bus bus) {
 		busService.update(bus);
+	}
+	
+	@GetMapping(value="/get/bus/{busid}",produces="application/json")
+	public Bus getBustById(@PathVariable("busid") String busid){
+		return busService.getBusById(busid);
 	}
 
 }

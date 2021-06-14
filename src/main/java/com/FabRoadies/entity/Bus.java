@@ -36,7 +36,7 @@ public class Bus {
     //@Temporal(TemporalType.TIME)
    // private LocalTime departuretime;
 	
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm:ss", timezone = "UTC")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm", timezone = "UTC")
     @Temporal(TemporalType.TIME)
     private Date departuretime;
     
