@@ -51,7 +51,8 @@ public class BusController {
 //		bus.setDateofDeparture(dateofDeparture);
 		busService.save(bus);
 	}
-
+///////////////////////////////
+	
 	@DeleteMapping("/admin/deleteBus/{id}")
 	public void deleteBus(@PathVariable("id") String id) {
 		busService.delete(id);
