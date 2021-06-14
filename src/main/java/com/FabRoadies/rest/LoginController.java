@@ -22,15 +22,15 @@ public class LoginController {
 
     
 	@GetMapping(value="/login/{email}/{password}",produces="application/json")
-	public User getUser(@PathVariable("email") String email,@PathVariable("password") String password) {
+	public int getUser(@PathVariable("email") String email,@PathVariable("password") String password) {
 		
 		Encoder encoder = Base64.getEncoder();
 		String passwords = encoder.encodeToString(password.getBytes());
 		
 		User user= service.getByEmailPassword(email,passwords);
 		System.out.println(user.getRoll().getRollid());
-		//return user.getRoll().getRollid();
-		return user;
+		return user.getRoll().getRollid();
+		//return user;
 		
 	}
 
