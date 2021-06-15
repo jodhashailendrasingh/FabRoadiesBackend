@@ -1,7 +1,12 @@
 package com.fabRoadies.dto;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+//@Entity
 public class LoginReturn {
 	
+//	@Id
 	private int roleId;
 	
 	private int userId;
