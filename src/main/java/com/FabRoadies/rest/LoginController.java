@@ -1,10 +1,7 @@
 package com.fabRoadies.rest;
 
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Base64.Encoder;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fabRoadies.dto.LoginReturn;
 import com.fabRoadies.entity.User;
-import com.fabRoadies.repo.UserRepo;
 import com.fabRoadies.service.LoginService;
-import com.fabRoadies.service.UserService;
 
 @CrossOrigin
 @RestController  
@@ -36,13 +31,8 @@ public class LoginController {
 		LoginReturn a=new LoginReturn();
 		a.setRoleId((user.getRoll().getRollid()));
 		System.out.println(a.getRoleId());
-<<<<<<< HEAD
-		a.setUserId(user.getId());
-=======
-		System.out.println(user.getId());
 		a.setUserId(user.getId());
 		System.out.println(a.getUserId());
->>>>>>> e703b34c9d5aed27342ad42952b0580585c28754
 		return a;
 		
 	}
