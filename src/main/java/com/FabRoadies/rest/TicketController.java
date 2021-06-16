@@ -1,5 +1,6 @@
 package com.fabRoadies.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fabRoadies.dto.UserTickets;
 import com.fabRoadies.entity.Ticket;
 import com.fabRoadies.service.TicketService;
 
@@ -32,12 +34,36 @@ public class TicketController {
 //	public void cancelBookTicket(@PathVariable("ticketId") Long ticketId) {
 //		service.cancelBookTicket(ticketId);
 //	}
-	
 	@GetMapping(value="/get/userTickets/{userId}",produces="application/json")
+	public List<UserTickets> getAllTicketOfUser(@PathVariable("userId") int userId){
+		//return service.getAllTicketsOfUser(userId);
+		List<Ticket>ts=service.getAllTicketsOfUser(userId);
+		List<UserTickets>ut=new ArrayList<>();
+		for(int i=0;i<ts.size();i++)
+		{
+			UserTickets temp=new UserTickets();
+			temp.ticketId=ts.get(i).getTicketId();
+			temp.busno=ts.get(i).getBus().getBusno();
+			temp.price=ts.get(i).getPrice();
+			temp.reservationDate=ts.get(i).getReservationDate();
+			temp.bustype=ts.get(i).getBus().getBusType();
+			temp.source=ts.get(i).getBus().getDepartureCity();
+			temp.destination=ts.get(i).getBus().getArrivalCity();
+			if(ts.get(i).isBooked())
+			{
+				temp.booked="Booked";
+			}
+			
+			ut.add(temp);
+		}
+	return ut;
+	}
+	
+/*	@GetMapping(value="/get/userTickets/{userId}",produces="application/json")
 	public List<Ticket> getAllTicketOfUser(@PathVariable("userId") int userId){
 		return service.getAllTicketsOfUser(userId);
 	}
-	
+	*/
 	@DeleteMapping(value="/delete/{ticketId}")
 	public void deleteTicket(@PathVariable("ticketId") Long ticketId) {
 		service.deleteTicket(ticketId);

@@ -104,7 +104,9 @@ public class BusBookService {
 		}
 		
 //		Message Sent
-//		hello This is FabRoadies.Have a safe Journey
+//		hello This is FabRoadi
+		
+	//	es.Have a safe Journey
 		//SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey enjoy trip",reservationRequest.get(0).getPhone());
 //		System.out.println("message sent");
 		return savedReservation;

@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fabRoadies.entity.Bus;
+import com.fabRoadies.entity.Passenger;
 import com.fabRoadies.entity.Ticket;
 import com.fabRoadies.entity.User;
 import com.fabRoadies.repo.BusRepository;
+import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
 
@@ -22,7 +24,10 @@ public class TicketServiceImpl implements TicketService{
 	UserRepo userrepo;
 	@Autowired
 	TicketRepo repo;
-	
+	//////////////////////////////
+	@Autowired
+	PassengerRepo prepo;
+	//////////////////////////////
 	@Override
 	public Ticket bookTicket(String busId, int userId, int numberOfSeat) {
 		Bus bus = busrepo.getById(busId);
@@ -50,6 +55,15 @@ public class TicketServiceImpl implements TicketService{
 
 	@Override
 	public void deleteTicket(Long id) {
+		
+		Ticket t=repo.getById(id);
+		
+		int length=t.getPassenger().size();
+		List<Passenger>psg=t.getPassenger();
+		for(int i=0;i<length;i++)
+		{
+			prepo.delete(psg.get(i));
+		}
 		repo.delete(repo.getById(id));
 	}
 

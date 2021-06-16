@@ -37,7 +37,7 @@ public class PdfGenerator {
         try {
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();
-            document.addTitle("Here is your Flight ticket");
+            document.addTitle("Here is your Bus ticket");
 //            addLogo(document);
             document.add(generateTable(reservation));
             document.close();

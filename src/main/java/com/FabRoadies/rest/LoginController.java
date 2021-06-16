@@ -17,6 +17,7 @@ import com.fabRoadies.repo.UserRepo;
 import com.fabRoadies.service.LoginService;
 import com.fabRoadies.service.UserService;
 
+
 @CrossOrigin
 @RestController  
 public class LoginController {
@@ -36,15 +37,11 @@ public class LoginController {
 		LoginReturn a=new LoginReturn();
 		a.setRoleId((user.getRoll().getRollid()));
 		System.out.println(a.getRoleId());
-<<<<<<< HEAD
 		a.setUserId(user.getId());
-=======
-		System.out.println(user.getId());
-		a.setUserId(user.getId());
-		System.out.println(a.getUserId());
->>>>>>> e703b34c9d5aed27342ad42952b0580585c28754
 		return a;
+//		return user;
 		
 	}
 
 }
+
