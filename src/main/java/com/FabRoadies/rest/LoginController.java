@@ -36,7 +36,7 @@ public class LoginController {
 		LoginReturn a=new LoginReturn();
 		a.setRoleId((user.getRoll().getRollid()));
 		System.out.println(a.getRoleId());
-		a.setUserId(user.getId());;
+		a.setUserId(user.getId());
 		return a;
 //		return user;
 		

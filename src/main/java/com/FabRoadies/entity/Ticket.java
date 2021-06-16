@@ -34,7 +34,7 @@ public class Ticket {
 	////////////////////////////
 	@NotNull
     private double price;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate reservationDate;
     /////////////////////////
     @ManyToOne
