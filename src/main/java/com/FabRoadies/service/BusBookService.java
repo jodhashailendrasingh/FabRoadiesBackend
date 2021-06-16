@@ -68,8 +68,7 @@ public class BusBookService {
 		reservation.setUser(user);
 		reservation.setReservationDate(LocalDate.now());
 		
-		//Price and Reservation Date component to be added
-	    reservation.setPrice(bus.getPrice()*reservationRequest.size());//done without dhruv
+		reservation.setPrice(bus.getPrice()*reservationRequest.size());
 		
 		Ticket savedReservation = reservationRepository.save(reservation);
 
@@ -84,10 +83,8 @@ public class BusBookService {
 			passenger.setGender(reservationRequest.get(i).getGender());
 			passenger.setAge(reservationRequest.get(i).getAge());
 			passenger.setTicket(reservation);
-//			passenger.setTicket(reservationRepository.getById((long) 39));
 			listOfPassenger.add(passenger);
 			passengerRepository.save(passenger);
-			// return null;
 		}
 		try
 
@@ -104,11 +101,6 @@ public class BusBookService {
 		}
 		
 //		Message Sent
-
-//		hello This is FabRoadi
-		
-	//	es.Have a safe Journey
-		//SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey enjoy trip",reservationRequest.get(0).getPhone());
 
 //		hello This is FabRoadies.Have a safe Journey
 //		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey and enjoy your trip",reservationRequest.get(0).getPhone());
