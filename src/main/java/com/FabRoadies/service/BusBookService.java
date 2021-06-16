@@ -91,9 +91,9 @@ public class BusBookService {
 		try
 
 		{
-			PdfGenerator.generateItenary(listOfPassenger,"C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf");
+			PdfGenerator.generateItenary(listOfPassenger,"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"+"Passenger.pdf");
 		
-			String s="C:\\Users\\SHAILENDRASINGH\\workspace-project\\FabRoadies\\"+"Passenger.pdf";
+			String s="C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"+"Passenger.pdf";
 			service.sendEmailWithAttachment(reservationRequest.get(0).getEmail(),
 					"This is Email Body with Attachment",
 					"This email has attachment",
@@ -104,7 +104,7 @@ public class BusBookService {
 		
 //		Message Sent
 //		hello This is FabRoadies.Have a safe Journey
-		//SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey enjoy trip",reservationRequest.get(0).getPhone());
+//		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey and enjoy your trip",reservationRequest.get(0).getPhone());
 //		System.out.println("message sent");
 		return savedReservation;
 	}
