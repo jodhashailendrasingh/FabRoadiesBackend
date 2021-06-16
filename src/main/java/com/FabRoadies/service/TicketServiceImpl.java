@@ -72,6 +72,7 @@ public class TicketServiceImpl implements TicketService{
 		return repo.findAll();
 	}
 
+	
 	@Override
 	public Ticket getTicketById(Long id) {
 		return repo.findById(id).get();
