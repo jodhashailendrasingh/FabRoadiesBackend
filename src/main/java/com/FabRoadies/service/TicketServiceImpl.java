@@ -15,6 +15,11 @@ import com.fabRoadies.repo.PassengerRepo;
 import com.fabRoadies.repo.TicketRepo;
 import com.fabRoadies.repo.UserRepo;
 
+/**
+ * Reperesents Ticket Service Implementation
+ * @author Dhruv Marothi
+ * @version 1.0
+ */
 @Service
 public class TicketServiceImpl implements TicketService{
 	

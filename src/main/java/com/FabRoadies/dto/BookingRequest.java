@@ -1,5 +1,7 @@
 package com.fabRoadies.dto;
 
+import java.time.LocalDate;
+
 /**
  * Reperesents Booking request entity encountered when ticket is booked.
  * @author Shailendra
@@ -7,13 +9,14 @@ package com.fabRoadies.dto;
  */
 public class BookingRequest {
 	private int userid;
-	private int seatno;
+	private String seatno;
     private String busno;
     private String name;
     private String gender;
     private int age;
     private String email;
     private String phone;
+//    private LocalDate reservationDate;
     
     
 	public int getUserid() {
@@ -22,10 +25,10 @@ public class BookingRequest {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	public int getSeatno() {
+	public String getSeatno() {
 		return seatno;
 	}
-	public void setSeatno(int seatno) {
+	public void setSeatno(String seatno) {
 		this.seatno = seatno;
 	}
 	public String getBusno() {

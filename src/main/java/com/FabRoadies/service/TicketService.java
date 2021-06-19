@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.fabRoadies.entity.Ticket;
 
+/**
+ * Reperesents Ticket Service
+ * @author Dhruv Marothi
+ * @version 1.0
+ */
 @Service
 public interface TicketService {
 	Ticket bookTicket(String busId, int userId,int numberOfSeat);

@@ -16,6 +16,11 @@ import com.fabRoadies.dto.UserTickets;
 import com.fabRoadies.entity.Ticket;
 import com.fabRoadies.service.TicketService;
 
+/**
+ * Reperesents Ticket Controller
+ * @author Dhruv Marothi
+ * @version 1.0
+ */
 @CrossOrigin
 @RestController
 public class TicketController {

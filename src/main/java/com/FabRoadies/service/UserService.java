@@ -15,6 +15,8 @@ public interface UserService {
 	void removeUser(int code);
 
 	void addUser(User user, int roll);
+	
+	int getUserIdByEmail(String email);
 
 
 }

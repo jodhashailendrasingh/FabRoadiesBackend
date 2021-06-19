@@ -12,6 +12,7 @@ import com.fabRoadies.entity.User;
 public interface UserRepo  extends JpaRepository<User, Integer>
 	{  
 	User findOneByEmail(String email);
+	
 	@Query("from User where email=:uemail and password=:upassword")
 	User getByEmailPassword(String uemail,String upassword);
 	

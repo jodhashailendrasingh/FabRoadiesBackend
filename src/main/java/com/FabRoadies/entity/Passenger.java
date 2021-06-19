@@ -15,7 +15,7 @@ public class Passenger {
 	   @Id
        @GeneratedValue(strategy = GenerationType.AUTO)
 	    private int id;
-	    private int seatno;
+	    private String seatno;
 	    
 	    private String name;
 	    private String gender;
@@ -33,10 +33,10 @@ public class Passenger {
 		public void setId(int id) {
 			this.id = id;
 		}
-		public int getSeatno() {
+		public String getSeatno() {
 			return seatno;
 		}
-		public void setSeatno(int seatno) {
+		public void setSeatno(String seatno) {
 			this.seatno = seatno;
 		}
 		public String getName() {
