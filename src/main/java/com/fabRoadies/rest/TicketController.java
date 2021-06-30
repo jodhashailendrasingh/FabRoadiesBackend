@@ -26,22 +26,10 @@ import com.fabRoadies.service.TicketService;
 public class TicketController {
 
 	@Autowired
-	private TicketService service;
-	///////
+	private TicketService service;	
 	
-	//This method is now is attached with BusBookService Module.
-	/*@PostMapping(value="/add/ticket/{busId}/{userId}/{noOfSeat}",consumes="application/json")
-	public Ticket addTicket(@PathVariable("busId") String busId,@PathVariable("userId") int userId,@PathVariable int noOfSeat) {
-		return service.bookTicket(busId, userId, noOfSeat);
-	}*/
-	
-//	@PutMapping(value="/cancel/{ticketId}")
-//	public void cancelBookTicket(@PathVariable("ticketId") Long ticketId) {
-//		service.cancelBookTicket(ticketId);
-//	}
 	@GetMapping(value="/get/userTickets/{userId}",produces="application/json")
 	public List<UserTickets> getAllTicketOfUser(@PathVariable("userId") int userId){
-		//return service.getAllTicketsOfUser(userId);
 		List<Ticket>ts=service.getAllTicketsOfUser(userId);
 		List<UserTickets>ut=new ArrayList<>();
 		for(int i=0;i<ts.size();i++)
@@ -64,11 +52,6 @@ public class TicketController {
 	return ut;
 	}
 	
-/*	@GetMapping(value="/get/userTickets/{userId}",produces="application/json")
-	public List<Ticket> getAllTicketOfUser(@PathVariable("userId") int userId){
-		return service.getAllTicketsOfUser(userId);
-	}
-	*/
 	@DeleteMapping(value="/delete/{ticketId}")
 	public void deleteTicket(@PathVariable("ticketId") Long ticketId) {
 		service.deleteTicket(ticketId);

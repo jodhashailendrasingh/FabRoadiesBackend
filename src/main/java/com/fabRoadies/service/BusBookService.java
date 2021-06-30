@@ -110,11 +110,8 @@ public class BusBookService {
 		}
 		
 //		Message Sent
-
-//		hello This is FabRoadies.Have a safe Journey
 		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey and enjoy your trip",reservationRequest.get(0).getPhone());
 		
-//		System.out.println("message sent");
 		return savedReservation;
 	}
 	
@@ -122,7 +119,6 @@ public class BusBookService {
 		System.out.println(id);
 		SendSms.sendsms("Your OTP no. is: "+ id +" .DO NOT SHARE IT ANYONE ELSE",userRepository.findById(uid).get().getPhoneNumber());
 		this.otpSent=id;
-//		return this.id;
 	}
 	
 	public boolean verification(int otp) {

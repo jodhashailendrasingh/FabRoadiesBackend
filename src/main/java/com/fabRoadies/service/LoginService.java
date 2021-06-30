@@ -16,10 +16,7 @@ public class LoginService {
 	@Autowired
     private UserRepo userRepository;
 	public User getByEmailPassword(String uemail, String upassword) {
-		// TODO Auto-generated method stub
-		return userRepository.getByEmailPassword(uemail,upassword);
-	
+		return userRepository.getByEmailPassword(uemail,upassword);	
 		
 	}
-
 }

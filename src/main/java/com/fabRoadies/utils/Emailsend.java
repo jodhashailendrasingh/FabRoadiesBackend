@@ -42,8 +42,6 @@ public class Emailsend {
 			throws MessagingException {
 
 		MimeMessage mimeMessage = mailsender.createMimeMessage();
-		// MimeMessageHelper mimeMessageHelper=new
-		// MimeMessageHelper(mimeMessage,multipart as->true);
 		MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
 		mimeMessageHelper.setFrom("pratik9818@gmail.com");
 		mimeMessageHelper.setTo(toEmail);

@@ -25,30 +25,29 @@ import com.sun.istack.NotNull;
 public class Ticket {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ticketId;  
-    ///////////////////////////
+    private long ticketId; 
+	
 	@ManyToOne
 	@JsonBackReference
     @JoinColumn(name="bus_id")
     private Bus bus;
-	////////////////////////////
+	
 	@NotNull
     private double price;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate reservationDate;
-    /////////////////////////
+    
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name="user_id")
     private User user;
-    //////////////////////////
+    
     @OneToMany(mappedBy="ticket")
     private List<Passenger> passenger;
     
     private boolean booked=true;
 
     
-    //Getters and Setters
     public long getTicketId() {
 		return ticketId;
 	}

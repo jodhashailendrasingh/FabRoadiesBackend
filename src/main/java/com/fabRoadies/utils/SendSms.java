@@ -22,7 +22,6 @@ public class SendSms {
 			message = URLEncoder.encode(message, "UTF-8");
 			String language="english";
 			String route="p";
-//			String numbers="7976378593";
 			String myurl="https://www.fast2sms.com/dev/bulk?authorization="+api_key+"&sender_id="+sendId+"&message="+message+"&language="+language+"&route="+route+"&numbers="+number;    
 			System.out.println(myurl);
 			
@@ -36,7 +35,6 @@ public class SendSms {
 			int code=con.getResponseCode();
 			System.out.println("Response code : "+code);		
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

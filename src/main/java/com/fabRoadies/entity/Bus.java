@@ -24,8 +24,7 @@ public class Bus {
     private String busType;
     private String departureCity;
     private String arrivalCity;
-//    @Temporal(TemporalType.DATE)
-	private LocalDate dateOfDeparture;
+    private LocalDate dateOfDeparture;
 	private int price;
 	private int seats;
 	
@@ -88,17 +87,4 @@ public class Bus {
 		this.departuretime = departuretime;
 	}
 	
-	
-	///////////////
-	
-//	public List<Ticket> getTickets() {
-//		return tickets;
-//	}
-//	public void setTickets(List<Ticket> tickets) {
-//		this.tickets = tickets;
-//	}  
-//	
-    
-    
-    
 }

@@ -42,7 +42,6 @@ public class UserController
 
 	        
 		service.addUser(user,roll);
-		//System.out.print(service.getByCode(user.getId()).getPassword());
 		String msg="Hello Dear "+user.getName()+",\n"
 			    	+ "We are pleased to inform you that you are successfully registered with us.\n"
 			    
@@ -52,9 +51,7 @@ public class UserController
 		emailsend.sendSimpleEmail(user.getEmail(),msg, "welcome");	
 		
 	}
-	
-	/////////
-	
+		
 	@GetMapping(value="/user/{code}",produces="application/json")
 	public User getUser(@PathVariable("code") int code) {
 		return service.getByCode(code);

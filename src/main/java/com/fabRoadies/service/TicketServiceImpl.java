@@ -29,10 +29,8 @@ public class TicketServiceImpl implements TicketService{
 	UserRepo userrepo;
 	@Autowired
 	TicketRepo repo;
-	//////////////////////////////
 	@Autowired
 	PassengerRepo prepo;
-	//////////////////////////////
 	@Override
 	public Ticket bookTicket(String busId, int userId, int numberOfSeat) {
 		Bus bus = busrepo.getById(busId);
@@ -53,8 +51,6 @@ public class TicketServiceImpl implements TicketService{
 
 	@Override
 	public List<Ticket> getAllTicketsOfUser(int userId) {		
-//		User user = userrepo.getById(userId);
-//		return user.getTickets();
 		return repo.findByUserId(userId);
 	}
 

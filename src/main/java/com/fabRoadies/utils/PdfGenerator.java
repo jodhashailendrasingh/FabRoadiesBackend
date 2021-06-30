@@ -30,15 +30,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class PdfGenerator {
 
-   // private static final com.itextpdf.text.log.Logger LOGGER = LoggerFactory.getLogger(PdfGenerator.class);
-
+  
     public static void generateItenary(List<Passenger> reservation, String filePath) throws DocumentException, MalformedURLException, IOException{
-    //    LOGGER.info("generateItinerary()");
-        Document document=new Document();
-        
-        
-        
-        
+        Document document=new Document();      
         
         try {
         	
@@ -58,7 +52,6 @@ public class PdfGenerator {
             document.add(p1);
             Paragraph p2=new Paragraph("****");
             document.add(p2);
-           // document.add(generateTable(reservation));
             PdfPCell c1 = new PdfPCell(new Phrase("Reservation Date:"+reservation.get(0).getTicket().getReservationDate()+""));
             table.addCell(c1);
             PdfPCell c2 = new PdfPCell(new Phrase("Bus Number:"+reservation.get(0).getTicket().getBus().getBusno()));

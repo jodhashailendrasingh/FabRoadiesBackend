@@ -31,7 +31,6 @@ public class LoginController {
 		
 		User user= service.getByEmailPassword(email,passwords);
 		System.out.println(user.getRoll().getRollid());
-//		return user.getRoll().getRollid();
 		LoginReturn a=new LoginReturn();
 		a.setRoleId((user.getRoll().getRollid()));
 		System.out.println(a.getRoleId());
@@ -40,8 +39,6 @@ public class LoginController {
 		System.out.println(a.getUserId());
 
 		return a;
-//		return user;
-		
 	}
 
 }

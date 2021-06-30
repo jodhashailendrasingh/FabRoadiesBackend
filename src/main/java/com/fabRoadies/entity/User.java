@@ -28,8 +28,8 @@ public class User {
     private String password;
     private String name;
     private String phoneNumber;
-    ////////////////
-	@JsonBackReference
+   
+    @JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="roll_id")
 	private Roles roll;
@@ -67,7 +67,6 @@ public class User {
 	public void setPassword(String password) {
 		Encoder encoder = Base64.getEncoder();
 		String passwords = encoder.encodeToString(password.getBytes());
-		//System.out.println(encodedPassword);
 		this.password = passwords;
 	}
 	
